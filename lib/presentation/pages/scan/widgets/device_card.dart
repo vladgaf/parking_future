@@ -6,7 +6,6 @@ import '../../../assets_image.dart';
 import '../../../widgets/basic_card.dart';
 import '../../../widgets/basic_image.dart';
 
-// TODO: брать с бека
 const _recommended = ['hc05, hc-05', 'hc', '05'];
 
 class DeviceCard extends StatelessWidget {

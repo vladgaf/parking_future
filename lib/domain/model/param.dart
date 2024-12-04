@@ -54,44 +54,6 @@ class Param extends Equatable {
     );
   }
 
-  /// Параметр устройства, с диалоговым окном
-  factory Param.deviceModal({
-    required String key,
-    required String title,
-    String? description,
-    required VoidCallback onTap,
-  }) {
-    return Param._(
-      type: ParamKey.typesMap[key],
-      key: key,
-      title: title,
-      description: description ?? '',
-      value: null,
-      maxValue: null,
-      action: onTap,
-    );
-  }
-
-  /// Параметр устройства, для отправки данных
-  factory Param.deviceAction({
-    required String key,
-    required String title,
-    String? description,
-    dynamic value,
-    dynamic maxValue,
-    required ValueChanged<dynamic> sendValue,
-  }) {
-    return Param._(
-      type: ParamKey.typesMap[key],
-      key: key,
-      title: title,
-      description: description ?? '',
-      value: value ?? 0,
-      maxValue: maxValue,
-      action: sendValue,
-    );
-  }
-
   @override
   List<Object?> get props => [
         key,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../core/theme.dart';
-import '../../domain/model/lightning_mode.dart';
 import '../../domain/model/param.dart';
 import 'basic_card.dart';
 
@@ -22,18 +21,6 @@ class SettingsCard extends StatelessWidget {
 
   factory SettingsCard.fromParam(Param param) {
     switch (param.type) {
-      case int:
-        return SettingsCard._(
-          title: param.title,
-          description: param.description,
-          right: Text(param.value.toStringAsFixed(0)),
-          bottom: Slider(
-            min: 0,
-            max: param.maxValue ?? 100.0,
-            value: (param.value as num).toDouble(),
-            onChanged: (v) => param.action(v.round()),
-          ),
-        );
       case bool:
         return SettingsCard._(
           title: param.title,
@@ -44,7 +31,6 @@ class SettingsCard extends StatelessWidget {
             onChanged: (v) => param.action(v),
           ),
         );
-      case LightingMode:
       case null:
         return SettingsCard._(
           title: param.title,
