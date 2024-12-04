@@ -1,4 +1,3 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 
 class Logger {
@@ -15,9 +14,6 @@ class Logger {
   static void _logProd(dynamic message, [Object? data, StackTrace? stack]) {
     String m = message.toString();
     if (data != null) m += ':\n$data';
-
-    final crashlytics = FirebaseCrashlytics.instance;
-    crashlytics.log(m);
-    if (stack != null) crashlytics.recordError(data, stack);
+    print(m);
   }
 }
