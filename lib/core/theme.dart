@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const _accent = Color(0xFFFAD960);
+  static const _accent = Color(0xFF6495ED);
   static final accent = _createMaterialColor(_accent);
   static const error = Colors.redAccent;
 
