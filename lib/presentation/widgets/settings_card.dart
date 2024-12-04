@@ -8,14 +8,12 @@ class SettingsCard extends StatelessWidget {
   final String title;
   final String description;
   final Widget? right;
-  final Widget? bottom;
   final VoidCallback? onTap;
 
   const SettingsCard._({
     required this.title,
     required this.description,
     this.right,
-    this.bottom,
     this.onTap,
   });
 
@@ -62,10 +60,6 @@ class SettingsCard extends StatelessWidget {
                     description,
                     style: AppTheme.additional,
                   ),
-                ],
-                if (bottom != null) ...[
-                  const SizedBox(height: 12),
-                  bottom!,
                 ],
               ],
             ),

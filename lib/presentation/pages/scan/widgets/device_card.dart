@@ -36,7 +36,7 @@ class DeviceCard extends StatelessWidget {
           children: [
             if (recommended) ...[
               BasicImage(
-                AssetsIcon.barmen_grey.path,
+                AssetsIcon.parking_grey.path,
                 height: 46,
                 width: 46,
               ),

@@ -51,7 +51,7 @@ class LaunchAnimation extends StatelessWidget {
           Center(
             child: Stack(
               children: [
-                BasicImage(AssetsIcon.barmen.path),
+                BasicImage(AssetsIcon.parking.path),
                 AnimatedPositioned(
                   duration: _duration,
                   curve: Curves.easeInQuart,

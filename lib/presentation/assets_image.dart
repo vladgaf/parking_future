@@ -3,8 +3,8 @@
 const _basePath = 'assets/icon';
 
 enum AssetsIcon {
-  barmen,
-  barmen_grey;
+  parking,
+  parking_grey;
 
   String get path {
     return '$_basePath/$name.svg';

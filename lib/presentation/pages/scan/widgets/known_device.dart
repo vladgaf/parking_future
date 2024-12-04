@@ -40,7 +40,7 @@ class _KnownDeviceSheet extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Row(
               children: [
-                BasicImage(AssetsIcon.barmen_grey.path, height: 68, width: 68),
+                BasicImage(AssetsIcon.parking_grey.path, height: 68, width: 68),
                 const SizedBox(width: 16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -33,7 +33,7 @@ class BarmenCard extends StatelessWidget {
   String get _hint => isActive ? Strings.tapToDisconnect : Strings.tapToConnect;
 
   AssetsIcon get _image =>
-      isActive ? AssetsIcon.barmen : AssetsIcon.barmen_grey;
+      isActive ? AssetsIcon.parking : AssetsIcon.parking_grey;
 
   @override
   Widget build(BuildContext context) {
