@@ -16,7 +16,7 @@ class ParkingSlotCard extends StatelessWidget {
       child: BasicCard(
         margin: const EdgeInsets.all(15),
         padding: const EdgeInsets.all(15),
-        color: !slot.taken ? AppTheme.accent.withOpacity(0.7) : AppTheme.accent,
+        color: !slot.taken ? AppTheme.accent.withOpacity(0.3) : AppTheme.accent,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
