@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../injection.dart';
-import '../presentation/pages/debug/debug.dart';
 import '../presentation/pages/home/connection_provider.dart';
 import '../presentation/pages/home/home.dart';
 import '../presentation/pages/launch/launch.dart';
@@ -45,8 +44,6 @@ class AppRoutes {
             child: const ScanPage(),
           ),
         );
-      case debug:
-        return _makeRoute(const DebugPage());
       case home:
         return _makeRoute(ChangeNotifierProvider(
           create: (_) => get<ConnectionProvider>(),

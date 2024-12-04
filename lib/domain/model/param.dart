@@ -2,21 +2,12 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../presentation/fragments/settings/provider.dart';
-import 'lightning_mode.dart';
 
 class ParamKey {
   static const autoConnect = 'autoConnect';
-  static const drinksQuantity = 'drinksQuantity';
-  static const calibration = 'calibration';
-  static const lightningMode = 'lightningMode';
-  static const lightningBrightness = 'lightningBrightness';
 
   static const typesMap = {
     autoConnect: bool,
-    drinksQuantity: int,
-    calibration: null,
-    lightningMode: LightingMode,
-    lightningBrightness: int,
   };
 }
 

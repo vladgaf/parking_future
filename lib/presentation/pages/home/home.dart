@@ -30,19 +30,6 @@ class HomePageState extends State<HomePage> {
     SettingsFragment(),
   ];
 
-  void startPour() async {
-    final provider = context.read<ConnectionProvider>();
-    provider.startPour();
-
-    showModalBottomSheet(
-      context: context,
-      builder: (_) => ChangeNotifierProvider.value(
-        value: provider,
-        child: const PourModal(),
-      ),
-    ).whenComplete(provider.stopPour);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
