@@ -14,6 +14,7 @@ class Logger {
   static void _logProd(dynamic message, [Object? data, StackTrace? stack]) {
     String m = message.toString();
     if (data != null) m += ':\n$data';
+    // ignore: avoid_print
     print(m);
   }
 }
