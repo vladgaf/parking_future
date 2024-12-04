@@ -14,9 +14,7 @@ import 'package:avtonalivator/domain/connection/connector.dart' as _i391;
 import 'package:avtonalivator/domain/connection/device_methods.dart' as _i682;
 import 'package:avtonalivator/domain/repository/cocktails.dart' as _i570;
 import 'package:avtonalivator/domain/repository/config.dart' as _i685;
-import 'package:avtonalivator/domain/storage/commands.dart' as _i189;
 import 'package:avtonalivator/domain/storage/settings.dart' as _i191;
-import 'package:avtonalivator/domain/storage/stats.dart' as _i402;
 import 'package:avtonalivator/injection.dart' as _i706;
 import 'package:avtonalivator/presentation/fragments/settings/provider.dart'
     as _i728;
@@ -42,9 +40,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final registerModule = _$RegisterModule();
-    gh.factory<_i189.CommandsBox>(() => _i189.CommandsBox());
     gh.factory<_i191.SettingsBox>(() => _i191.SettingsBox());
-    gh.factory<_i402.StatsBox>(() => _i402.StatsBox());
     gh.factory<_i893.LaunchCubit>(() => _i893.LaunchCubit());
     gh.singleton<_i88.FbsAdapter>(() => _i88.FbsAdapter());
     gh.singleton<_i361.Dio>(() => registerModule.dio);
