@@ -6,8 +6,6 @@ import '../../fragments/settings/provider.dart';
 import '../../fragments/settings/settings.dart';
 import '../../fragments/tuning/tuning.dart';
 import '../../strings.dart';
-import 'connection_provider.dart';
-import 'pour_modal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
