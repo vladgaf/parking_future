@@ -12,7 +12,7 @@ part of 'config.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ApiConfig _$ApiConfigFromJson(Map<String, dynamic> json) {
   return _ApiConfig.fromJson(json);
@@ -22,8 +22,12 @@ ApiConfig _$ApiConfigFromJson(Map<String, dynamic> json) {
 mixin _$ApiConfig {
   String? get accentColor => throw _privateConstructorUsedError;
 
+  /// Serializes this ApiConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApiConfigCopyWith<ApiConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -46,6 +50,8 @@ class _$ApiConfigCopyWithImpl<$Res, $Val extends ApiConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApiConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -79,6 +85,8 @@ class __$$ApiConfigImplCopyWithImpl<$Res>
       _$ApiConfigImpl _value, $Res Function(_$ApiConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,11 +126,13 @@ class _$ApiConfigImpl implements _ApiConfig {
                 other.accentColor == accentColor));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, accentColor);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiConfigImplCopyWith<_$ApiConfigImpl> get copyWith =>
@@ -144,8 +154,11 @@ abstract class _ApiConfig implements ApiConfig {
 
   @override
   String? get accentColor;
+
+  /// Create a copy of ApiConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiConfigImplCopyWith<_$ApiConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

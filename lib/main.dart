@@ -12,14 +12,7 @@ import 'presentation/strings.dart';
 const isDebug = kDebugMode;
 
 void main() {
-  if (isDebug) {
-    setupApp().then((_) => runApp(const MyApp()));
-  } else {
-    runZonedGuarded(
-      () => setupApp().then((_) => runApp(const MyApp())),
-      (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack),
-    );
-  }
+  setupApp().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -12,7 +12,7 @@ part of 'drink.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ApiDrink _$ApiDrinkFromJson(Map<String, dynamic> json) {
   return _ApiDrink.fromJson(json);
@@ -23,8 +23,12 @@ mixin _$ApiDrink {
   String get name => throw _privateConstructorUsedError;
   int get volume => throw _privateConstructorUsedError;
 
+  /// Serializes this ApiDrink to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiDrink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApiDrinkCopyWith<ApiDrink> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$ApiDrinkCopyWithImpl<$Res, $Val extends ApiDrink>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApiDrink
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -85,6 +91,8 @@ class __$$ApiDrinkImplCopyWithImpl<$Res>
       _$ApiDrinkImpl _value, $Res Function(_$ApiDrinkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiDrink
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,11 +141,13 @@ class _$ApiDrinkImpl implements _ApiDrink {
             (identical(other.volume, volume) || other.volume == volume));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, volume);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiDrink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiDrinkImplCopyWith<_$ApiDrinkImpl> get copyWith =>
@@ -162,8 +172,11 @@ abstract class _ApiDrink implements ApiDrink {
   String get name;
   @override
   int get volume;
+
+  /// Create a copy of ApiDrink
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiDrinkImplCopyWith<_$ApiDrinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

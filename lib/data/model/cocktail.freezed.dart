@@ -12,7 +12,7 @@ part of 'cocktail.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ApiCocktail _$ApiCocktailFromJson(Map<String, dynamic> json) {
   return _ApiCocktail.fromJson(json);
@@ -27,8 +27,12 @@ mixin _$ApiCocktail {
   String get recipe => throw _privateConstructorUsedError;
   List<ApiDrink> get drinks => throw _privateConstructorUsedError;
 
+  /// Serializes this ApiCocktail to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApiCocktail
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApiCocktailCopyWith<ApiCocktail> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$ApiCocktailCopyWithImpl<$Res, $Val extends ApiCocktail>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApiCocktail
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,6 +128,8 @@ class __$$ApiCocktailImplCopyWithImpl<$Res>
       _$ApiCocktailImpl _value, $Res Function(_$ApiCocktailImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApiCocktail
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -219,12 +227,14 @@ class _$ApiCocktailImpl implements _ApiCocktail {
             const DeepCollectionEquality().equals(other._drinks, _drinks));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, imageUrl, description,
       recipe, const DeepCollectionEquality().hash(_drinks));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApiCocktail
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApiCocktailImplCopyWith<_$ApiCocktailImpl> get copyWith =>
@@ -262,8 +272,11 @@ abstract class _ApiCocktail implements ApiCocktail {
   String get recipe;
   @override
   List<ApiDrink> get drinks;
+
+  /// Create a copy of ApiCocktail
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApiCocktailImplCopyWith<_$ApiCocktailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
