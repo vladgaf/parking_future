@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/theme.dart';
 import '../../pages/home/connection_provider.dart';
 import '../../strings.dart';
-import 'widgets/tuning_card.dart';
+import 'widgets/slot_card.dart';
 
-class TuningFragment extends StatelessWidget {
-  const TuningFragment({super.key});
+class StatusFragment extends StatelessWidget {
+  const StatusFragment({super.key});
 
   @override
   Widget build(BuildContext context) {

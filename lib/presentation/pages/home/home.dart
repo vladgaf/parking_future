@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../injection.dart';
 import '../../fragments/settings/provider.dart';
 import '../../fragments/settings/settings.dart';
-import '../../fragments/tuning/tuning.dart';
+import '../../fragments/status/status.dart';
 import '../../strings.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +24,7 @@ class HomePageState extends State<HomePage> {
   }
 
   static const bodies = [
-    TuningFragment(),
+    StatusFragment(),
     SettingsFragment(),
   ];
 
