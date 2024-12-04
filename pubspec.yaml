@@ -1,7 +1,7 @@
-name: avtonalivator
-description: Bluetooth client for Avtobarmen.
+name: parking_future
+description: Remote parking client
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.1.2
+version: 1.1.4
 environment:
   sdk: ^3.0.0
 

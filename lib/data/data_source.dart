@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import 'model/cocktail.dart';
 import 'model/config.dart';
 
-const _host = 'avtonalivator.ru';
+// Удаленный конфиг (на будущее)
+const _host = 'parking-future.ru';
 
 const _config = '/catalog/json/config.json';
-const _cocktails = '/catalog/json/cocktails.json';
 
 typedef Json = Map<String, dynamic>;
 
@@ -26,17 +25,6 @@ class DataSource {
 
     ApiConfig result = const ApiConfig();
     if (data is Json) result = ApiConfig.fromJson(data);
-    return result;
-  }
-
-  Future<List<ApiCocktail>> getCocktails() async {
-    final uri = _baseUri.replace(path: _cocktails);
-    final response = await _get(uri);
-    final data = response.data;
-
-    final list = data['data'];
-    final result =
-        list.map<ApiCocktail>((e) => ApiCocktail.fromJson(e)).toList();
     return result;
   }
 

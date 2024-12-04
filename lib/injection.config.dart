@@ -8,24 +8,24 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:avtonalivator/data/connection/fbs_adapter.dart' as _i88;
-import 'package:avtonalivator/data/data_source.dart' as _i380;
-import 'package:avtonalivator/domain/connection/connector.dart' as _i391;
-import 'package:avtonalivator/domain/connection/device_methods.dart' as _i682;
-import 'package:avtonalivator/domain/repository/config.dart' as _i685;
-import 'package:avtonalivator/domain/storage/settings.dart' as _i191;
-import 'package:avtonalivator/injection.dart' as _i706;
-import 'package:avtonalivator/presentation/fragments/settings/provider.dart'
-    as _i728;
-import 'package:avtonalivator/presentation/pages/home/connection_provider.dart'
-    as _i441;
-import 'package:avtonalivator/presentation/pages/launch/cubit/launch_cubit.dart'
-    as _i893;
-import 'package:avtonalivator/presentation/pages/scan/cubit/scan_cubit.dart'
-    as _i373;
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:parking_future/data/connection/fbs_adapter.dart' as _i234;
+import 'package:parking_future/data/data_source.dart' as _i451;
+import 'package:parking_future/domain/connection/connector.dart' as _i545;
+import 'package:parking_future/domain/connection/device_methods.dart' as _i277;
+import 'package:parking_future/domain/repository/config.dart' as _i1007;
+import 'package:parking_future/domain/storage/settings.dart' as _i361;
+import 'package:parking_future/injection.dart' as _i17;
+import 'package:parking_future/presentation/fragments/settings/provider.dart'
+    as _i134;
+import 'package:parking_future/presentation/pages/home/connection_provider.dart'
+    as _i490;
+import 'package:parking_future/presentation/pages/launch/cubit/launch_cubit.dart'
+    as _i60;
+import 'package:parking_future/presentation/pages/scan/cubit/scan_cubit.dart'
+    as _i1049;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -39,29 +39,29 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final registerModule = _$RegisterModule();
-    gh.factory<_i191.SettingsBox>(() => _i191.SettingsBox());
-    gh.factory<_i893.LaunchCubit>(() => _i893.LaunchCubit());
-    gh.singleton<_i88.FbsAdapter>(() => _i88.FbsAdapter());
+    gh.factory<_i361.SettingsBox>(() => _i361.SettingsBox());
+    gh.factory<_i60.LaunchCubit>(() => _i60.LaunchCubit());
+    gh.singleton<_i234.FbsAdapter>(() => _i234.FbsAdapter());
     gh.singleton<_i361.Dio>(() => registerModule.dio);
-    gh.factory<_i380.DataSource>(() => _i380.DataSource(gh<_i361.Dio>()));
-    gh.factory<_i391.Connector>(
-        () => _i391.FbsConnector(gh<_i88.FbsAdapter>()));
-    gh.singleton<_i685.ConfigRepository>(
-        () => _i685.ConfigRepository(gh<_i380.DataSource>()));
-    gh.factory<_i373.ScanCubit>(() => _i373.ScanCubit(
-          gh<_i191.SettingsBox>(),
-          gh<_i391.Connector>(),
+    gh.factory<_i451.DataSource>(() => _i451.DataSource(gh<_i361.Dio>()));
+    gh.factory<_i134.SettingsProvider>(
+        () => _i134.SettingsProvider(gh<_i361.SettingsBox>()));
+    gh.singleton<_i1007.ConfigRepository>(
+        () => _i1007.ConfigRepository(gh<_i451.DataSource>()));
+    gh.factory<_i545.Connector>(
+        () => _i545.FbsConnector(gh<_i234.FbsAdapter>()));
+    gh.factory<_i1049.ScanCubit>(() => _i1049.ScanCubit(
+          gh<_i361.SettingsBox>(),
+          gh<_i545.Connector>(),
         ));
-    gh.factory<_i682.DeviceMethods>(
-        () => _i682.FbsDeviceMethods(gh<_i88.FbsAdapter>()));
-    gh.factory<_i441.ConnectionProvider>(() => _i441.ConnectionProvider(
-          gh<_i682.DeviceMethods>(),
-          gh<_i391.Connector>(),
+    gh.factory<_i277.DeviceMethods>(
+        () => _i277.FbsDeviceMethods(gh<_i234.FbsAdapter>()));
+    gh.factory<_i490.ConnectionProvider>(() => _i490.ConnectionProvider(
+          gh<_i277.DeviceMethods>(),
+          gh<_i545.Connector>(),
         ));
-    gh.factory<_i728.SettingsProvider>(
-        () => _i728.SettingsProvider(gh<_i191.SettingsBox>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i706.RegisterModule {}
+class _$RegisterModule extends _i17.RegisterModule {}
