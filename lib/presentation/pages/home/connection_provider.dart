@@ -10,6 +10,7 @@ import '../../../domain/model/cocktail.dart';
 import '../../../domain/model/device.dart';
 import '../../../domain/model/device_data.dart';
 import '../../../domain/model/lightning_mode.dart';
+import '../../../domain/model/slot.dart';
 
 @injectable
 class ConnectionProvider extends ChangeNotifier {
@@ -19,12 +20,16 @@ class ConnectionProvider extends ChangeNotifier {
   ConnectionProvider(this._methods, this._connector) {
     device = _connector.device;
     _inputSub?.cancel();
+    _infoSub?.cancel();
     _inputSub = _methods.deviceData.map(_inputPrinter).listen(_inputListener);
+    _infoSub = _methods.infoStream.listen(_infoListener);
   }
 
   UiDevice? device;
   DeviceData data = const DeviceData();
+  List<UiSlot> output = [];
   StreamSubscription? _inputSub;
+  StreamSubscription? _infoSub;
 
   List<String> _drinks = [];
 
@@ -43,6 +48,11 @@ class ConnectionProvider extends ChangeNotifier {
 
   void _inputListener(DeviceData data) {
     this.data = data;
+    notifyListeners();
+  }
+
+  void _infoListener(String output) {
+    this.output = parseSlots(output);
     notifyListeners();
   }
 

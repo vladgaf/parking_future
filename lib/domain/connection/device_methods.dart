@@ -12,6 +12,8 @@ import '../model/lightning_mode.dart';
 abstract interface class DeviceMethods {
   Stream<DeviceData> get deviceData;
 
+  Stream<String> get infoStream;
+
   Future<void> setCocktail(UiCocktail cocktail);
 
   Future<void> startPour();
@@ -34,6 +36,11 @@ class FbsDeviceMethods implements DeviceMethods {
   @override
   Stream<DeviceData> get deviceData {
     return _adapter.input.distinct(listEquals).map(DeviceData.fromBytes);
+  }
+
+  @override
+  Stream<String> get infoStream {
+    return _adapter.input.distinct(listEquals).map((u) => utf8.decode(u));
   }
 
   @override
