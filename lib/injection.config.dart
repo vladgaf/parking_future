@@ -18,8 +18,6 @@ import 'package:avtonalivator/domain/storage/commands.dart' as _i189;
 import 'package:avtonalivator/domain/storage/settings.dart' as _i191;
 import 'package:avtonalivator/domain/storage/stats.dart' as _i402;
 import 'package:avtonalivator/injection.dart' as _i706;
-import 'package:avtonalivator/presentation/fragments/cocktails/provider.dart'
-    as _i61;
 import 'package:avtonalivator/presentation/fragments/settings/provider.dart'
     as _i728;
 import 'package:avtonalivator/presentation/fragments/tuning/provider.dart'
@@ -73,8 +71,6 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i728.SettingsProvider>(
         () => _i728.SettingsProvider(gh<_i191.SettingsBox>()));
-    gh.factory<_i61.CocktailsProvider>(
-        () => _i61.CocktailsProvider(gh<_i570.CocktailsRepository>()));
     return this;
   }
 }

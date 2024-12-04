@@ -5,7 +5,6 @@ import '../../../core/theme.dart';
 import '../../../domain/model/drink.dart';
 import '../../pages/home/connection_provider.dart';
 import '../../strings.dart';
-import '../cocktails/cocktails.dart';
 import 'provider.dart';
 import 'widgets/tuning_card.dart';
 
@@ -53,7 +52,7 @@ class _TuningBody extends StatelessWidget {
     return TuningCard(
       drink: drink,
       setDrink: context.read<TuningProvider>().updateDrink,
-      drinks: context.watch<CocktailsProvider>().drinks,
+      drinks: [],
     );
   }
 

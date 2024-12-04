@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../injection.dart';
-import '../../fragments/cocktails/cocktails.dart';
 import '../../fragments/settings/provider.dart';
 import '../../fragments/settings/settings.dart';
 import '../../fragments/tuning/tuning.dart';
@@ -28,8 +27,6 @@ class HomePageState extends State<HomePage> {
 
   static const bodies = [
     TuningFragment(),
-    CocktailsFragment(),
-    // StatsFragment(),
     SettingsFragment(),
   ];
 
@@ -54,7 +51,6 @@ class HomePageState extends State<HomePage> {
       body: MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => get<TuningProvider>()),
-          ChangeNotifierProvider(create: (_) => get<CocktailsProvider>()),
           ChangeNotifierProvider(create: (_) => get<SettingsProvider>()),
         ],
         child: bodies[index],
@@ -74,14 +70,6 @@ class HomePageState extends State<HomePage> {
             icon: Icon(Icons.tune_rounded),
             label: Strings.tuning,
           ),
-          NavigationDestination(
-            icon: Icon(Icons.liquor_rounded),
-            label: Strings.cocktails,
-          ),
-          // NavigationDestination(
-          //   icon: Icon(Icons.insert_chart_outlined_outlined),
-          //   label: Strings.stats,
-          // ),
           NavigationDestination(
             icon: Icon(Icons.settings_rounded),
             label: Strings.settings,
