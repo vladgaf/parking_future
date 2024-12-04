@@ -28,9 +28,7 @@ class Strings {
 
   // * Home
 
-  static const tuning = 'Приготовление';
-  static const cocktails = 'Коктейли';
-  static const stats = 'Статистика';
+  static const status = 'Статус';
   static const settings = 'Настройки';
 
   // * Common

@@ -46,7 +46,6 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /// В TuningFragment свой Scaffold
       primary: index != 0,
       body: MultiProvider(
         providers: [
@@ -54,20 +53,13 @@ class HomePageState extends State<HomePage> {
         ],
         child: bodies[index],
       ),
-      floatingActionButton: index != 0
-          ? null
-          : FloatingActionButton.extended(
-              onPressed: startPour,
-              icon: const Icon(Icons.local_drink_rounded),
-              label: const Text(Strings.pour),
-            ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: setIndex,
         selectedIndex: index,
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.tune_rounded),
-            label: Strings.tuning,
+            icon: Icon(Icons.local_parking_rounded),
+            label: Strings.status,
           ),
           NavigationDestination(
             icon: Icon(Icons.settings_rounded),
