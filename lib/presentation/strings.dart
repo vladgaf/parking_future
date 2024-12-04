@@ -2,7 +2,7 @@
 class Strings {
   // * General
 
-  static const autoBartender = 'Парковка будущего';
+  static const parkingOfFuture = 'Парковка будущего';
   static const description = 'Система анализа парковочного простанства';
 
   // * Launch

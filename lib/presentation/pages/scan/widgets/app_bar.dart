@@ -20,7 +20,7 @@ class ScanAppBar extends StatelessWidget {
         background: Padding(
           padding: const EdgeInsets.only(top: 60),
           child: Center(
-            child: BarmenCard(isConnecting: isConnecting),
+            child: ParkingCard(isConnecting: isConnecting),
           ),
         ),
       ),

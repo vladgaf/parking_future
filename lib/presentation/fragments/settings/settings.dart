@@ -7,7 +7,7 @@ import '../../../domain/model/device.dart';
 import '../../../domain/model/param.dart';
 import '../../pages/home/connection_provider.dart';
 import '../../strings.dart';
-import '../../widgets/barmen_card.dart';
+import '../../widgets/parking_card.dart';
 import '../../widgets/settings_card.dart';
 import '../../widgets/sliver_scaffold.dart';
 import 'provider.dart';

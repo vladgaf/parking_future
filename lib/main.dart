@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Strings.autoBartender,
+      title: Strings.parkingOfFuture,
       theme: AppTheme.value,
       initialRoute: AppRoutes.launch,
       onGenerateRoute: AppRoutes.openPage,

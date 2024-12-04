@@ -8,13 +8,13 @@ import 'basic_image.dart';
 
 const _additional = AppTheme.additional;
 
-class BarmenCard extends StatelessWidget {
+class ParkingCard extends StatelessWidget {
   final String? title;
   final String? subtitle;
   final VoidCallback? onTap;
   final bool isConnecting;
 
-  const BarmenCard({
+  const ParkingCard({
     super.key,
     this.title,
     this.subtitle,
@@ -27,7 +27,7 @@ class BarmenCard extends StatelessWidget {
   String get _title => title != null
       ? title!
       : isActive
-          ? '${Strings.autoBartender} $title'
+          ? '${Strings.parkingOfFuture} $title'
           : Strings.notConnected;
 
   String get _hint => isActive ? Strings.tapToDisconnect : Strings.tapToConnect;

@@ -6,7 +6,7 @@ import '../../../core/theme.dart';
 import '../../../domain/model/device.dart';
 import '../../assets_image.dart';
 import '../../strings.dart';
-import '../../widgets/barmen_card.dart';
+import '../../widgets/parking_card.dart';
 import '../../widgets/basic_card.dart';
 import '../../widgets/basic_image.dart';
 import '../../widgets/sliver_scaffold.dart';

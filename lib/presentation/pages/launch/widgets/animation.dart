@@ -31,7 +31,7 @@ class LaunchAnimation extends StatelessWidget {
             child: Column(
               children: [
                 AnimatedText(
-                  Strings.autoBartender,
+                  Strings.parkingOfFuture,
                   duration: _duration,
                   style: launchHeader.copyWith(
                     color: !animate ? Colors.transparent : AppTheme.black,

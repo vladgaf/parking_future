@@ -16,7 +16,7 @@ class StatusFragment extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          Strings.autoBartender,
+          Strings.parkingOfFuture,
           style: AppTheme.pageTitle,
         ),
       ),

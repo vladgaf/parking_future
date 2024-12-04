@@ -24,7 +24,7 @@ class SettingsAppBar extends StatelessWidget {
         background: Padding(
           padding: const EdgeInsets.only(top: 60),
           child: Center(
-            child: BarmenCard(
+            child: ParkingCard(
               title: device?.name ?? device?.address,
               subtitle: device?.address,
               isConnecting: isConnecting,
