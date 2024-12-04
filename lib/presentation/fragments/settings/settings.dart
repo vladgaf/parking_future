@@ -10,10 +10,7 @@ import '../../strings.dart';
 import '../../widgets/barmen_card.dart';
 import '../../widgets/settings_card.dart';
 import '../../widgets/sliver_scaffold.dart';
-import '../tuning/provider.dart';
 import 'provider.dart';
-import 'widgets/calibration_dialog.dart';
-import 'widgets/lightning_dialog.dart';
 
 part 'params.dart';
 part 'widgets/app_bar.dart';

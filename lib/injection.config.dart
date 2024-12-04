@@ -20,8 +20,6 @@ import 'package:avtonalivator/domain/storage/stats.dart' as _i402;
 import 'package:avtonalivator/injection.dart' as _i706;
 import 'package:avtonalivator/presentation/fragments/settings/provider.dart'
     as _i728;
-import 'package:avtonalivator/presentation/fragments/tuning/provider.dart'
-    as _i569;
 import 'package:avtonalivator/presentation/pages/home/connection_provider.dart'
     as _i441;
 import 'package:avtonalivator/presentation/pages/launch/cubit/launch_cubit.dart'
@@ -51,8 +49,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i88.FbsAdapter>(() => _i88.FbsAdapter());
     gh.singleton<_i361.Dio>(() => registerModule.dio);
     gh.factory<_i380.DataSource>(() => _i380.DataSource(gh<_i361.Dio>()));
-    gh.factory<_i569.TuningProvider>(
-        () => _i569.TuningProvider(gh<_i191.SettingsBox>()));
     gh.factory<_i391.Connector>(
         () => _i391.FbsConnector(gh<_i88.FbsAdapter>()));
     gh.singleton<_i570.CocktailsRepository>(

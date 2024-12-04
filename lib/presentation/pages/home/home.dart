@@ -50,7 +50,6 @@ class HomePageState extends State<HomePage> {
       primary: index != 0,
       body: MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => get<TuningProvider>()),
           ChangeNotifierProvider(create: (_) => get<SettingsProvider>()),
         ],
         child: bodies[index],
