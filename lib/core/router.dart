@@ -14,11 +14,8 @@ class AppRoutes {
   static const launch = '/launch';
   static const scan = '/scan';
   static const home = '/home';
-  static const debug = '/debug';
 
-  static const tuning = '/home/tuning';
-  static const cocktails = '/home/cocktails';
-  static const stats = '/home/stats';
+  static const status = '/home/status';
   static const settings = '/home/settings';
 
   static void setHomeIndex(int index) {
@@ -61,7 +58,7 @@ class AppRoutes {
 
   static Widget _getHomePage(String path) {
     String subPath = path.replaceAll(home, '');
-    if (subPath.isEmpty) subPath = tuning.replaceAll(home, '');
+    if (subPath.isEmpty) subPath = status.replaceAll(home, '');
 
     final route = _homeSubRoutes.firstWhere((r) => r.contains(subPath));
     final index = _homeSubRoutes.indexOf(route);
@@ -70,9 +67,7 @@ class AppRoutes {
   }
 
   static List<String> get _homeSubRoutes => [
-        tuning,
-        cocktails,
-        stats,
+        status,
         settings,
       ];
 }

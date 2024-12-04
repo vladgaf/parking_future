@@ -14,10 +14,6 @@ class SettingsAppBar extends StatelessWidget {
     this.onTap,
   });
 
-  void openDebug(BuildContext context) {
-    Navigator.of(context).pushNamed(AppRoutes.debug);
-  }
-
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -28,14 +24,11 @@ class SettingsAppBar extends StatelessWidget {
         background: Padding(
           padding: const EdgeInsets.only(top: 60),
           child: Center(
-            child: GestureDetector(
-              onLongPress: () => openDebug(context),
-              child: BarmenCard(
-                title: device?.name ?? device?.address,
-                subtitle: device?.address,
-                isConnecting: isConnecting,
-                onTap: onTap,
-              ),
+            child: BarmenCard(
+              title: device?.name ?? device?.address,
+              subtitle: device?.address,
+              isConnecting: isConnecting,
+              onTap: onTap,
             ),
           ),
         ),
